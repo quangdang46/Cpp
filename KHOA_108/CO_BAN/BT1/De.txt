@@ -1,0 +1,8 @@
+Bài 1: Viết chương trình nhập vào một ký tự:
+    In ra mã ASCII của ký tự đó.
+    In ra ký tự kế tiếp của nó.
+Bài 2: Viết chương trình nhập vào số nguyên n và số thực x. Tính và
+    in ra biểu thức A = (x² +x+1)^n + (x² – x + 1)^n
+Bài 3: Nhập toạ độ 2 điểm A(xa,ya), B(xb,Yb) Tính và xuất độ dài đoạn AB.
+    |AB|=sqrt((x, - x,)² +(y, – y,)^2)
+Bài 4: Viết chương trình đảo ngược một số nguyên dương có đúng 3ký số.

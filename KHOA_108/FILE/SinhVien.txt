@@ -1,0 +1,4 @@
+Sinhvien1;TranThiTun;4/6/2003
+Sinhvien2;TranQuangBa;12/11/2000
+Sinhvien3;DangThiTong;12/12/2002
+Sinhvien4;VoLeNguyenHong;12/4/2003

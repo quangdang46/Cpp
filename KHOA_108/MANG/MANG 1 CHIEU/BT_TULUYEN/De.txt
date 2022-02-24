@@ -1,0 +1,19 @@
+Bài 1: Viết chương trình thực hiện việc đảo một mảng một chiều.
+    Ví dụ : 1 2 3 4 5 79 10 đảo thành 10 9 7 5 4 3 2 1.
+Bài 2: Viết chương trình nhập vào hai ma trận A và B có cấp m, n. In hai ma trận lên
+    màn hình. Tổng hai ma trận A và B là ma trận C được tính bởi công thức:
+    Tính ma trận tổng C và in kết quả lên màn hình.
+Bài 3: Viết chương trình nhập vào hai ma trận A có cấp m, k và B có cấp k, n. In hai ma
+    trận lên màn hình. Tích hai ma trận A và B là ma trận C được tính bởi công thức:
+    Tính ma trận tích C và in kết quả lên màn hình.
+Bài 4: Nhập số phần tử và các phần tử nguyên dương của mảng a.
+    a) In các số nguyên tố có trong mảng a.
+    b) Sắp xếp các số chẳn trong mảng theo thứ tự tăng dần. 
+Bài 5: Nhập vào mảng a, b có m và n phần tử:
+    a) Nhập Các phần tử của a và b không trùng nhau.
+    b) Xếp theo thứ tự tăng dần hai mảng a, b.
+    c) Nối hai mảng này lại thành một mảng duy nhất sao cho mảng vẫn tăng.
+Bài 6: Nhập vào một dãy số nguyên dương ngẫu nhiên (random) có n phần tử. Viết
+    chương trình in ra số lớn hơn số nhỏ nhất của dãy và nhỏ hơn hay bằng với mọi số
+    còn lại (nghĩa là tìm số nhỏ thứ hai trong dãy). Nếu n phần tử đều bằng nhau thì
+    thông báo: không tồn tại số cần tìm.

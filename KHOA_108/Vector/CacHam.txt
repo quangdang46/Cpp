@@ -1,0 +1,204 @@
+1/ resize:
+- Hàm này có 2 dạng:
+	-  resize(<số lượng>): Cấp phát mảng với số lượng phần tử cụ thể cho trước. 
+
+                   	+ Mặc định khi cấp phát với resize là các phần tử đều mang giá trị mặc định ban đầu là 0(giống hàm calloc bên C)
+                   	+ Nếu mảng chưa từng được tạo thì sẽ tạo mảng với số lượng cụ thể đó. 
+                   	+ Nếu mảng đã được tạo mà tiếp tục resize thì kích thước của mảng sẽ co lại hay dãn ra so với mảng ban đầu. 
+                   	+ Nếu là co lại thì 1 số phần tử trong mảng ban đầu sẽ bị mất, nếu là dãn ra thì các phần tử lúc đầu vẫn tiếp tục tồn tại 
+
+	- resize(<số lượng>, <giá trị mặc định>):  
+
+	+ Cấp phát mảng với số lượng phần tử cụ thể cho trước - với giá trị của các phần tử là giá trị mặc định. 
+                  	+ Mảng được tạo mới nếu chưa có, nếu đã có rồi mảng sẽ co lại hoặc dãn ra so với mảng ban đầu. 
+
+2/ at(<chỉ số index>): Truy xuất đến phần tử có chỉ số index trong vector.
+vd: 
+vector a;
+cout << a.at(2); // Xuất ra phần tử tại vị trí 2 trong vector. Tương đương như: a[2]. Dùng cách nào cũng được. 
+ 
+3/ size(): Trả về kích thước hiện tại của vector (số lượng các phần tử đang chứa trong vector).
+
+
+========================= DEMO CODE ========================= 
+#include<iostream>
+using namespace std;
+#include<vector> // thêm vào thư viện để dùng vector
+
+/* CÚ PHÁP: vector<T> <tên vector>
+T: kiểu dữ liệu của mảng 1 chiều vector mà chúng ta sẽ dùng
+VD:
+vector<int> arr; // khai báo mảng vector chứa các số nguyên
+vector<SinhVien> list; // khai báo mảng vector chứa các sinh viên
+....
+
+*/
+
+// hàm xuất mảng vector
+void Xuat_Mang_Vector(vector<int> arr)
+{
+	for (int i = 0; i < arr.size(); i++)
+	{
+		cout << arr.at(i) << "  "; // <=> arr[i]
+	}
+}
+
+int main()
+{
+
+
+	vector<int> arr; // khai báo mảng vector chứa các số nguyên
+	arr.resize(5, 10); // cấp phát cho mảng vector chứa 5 phần tử 
+	cout << "\n\n\t\t XUAT MANG\n";
+	Xuat_Mang_Vector(arr);
+
+	//// co mảng arr lại
+	//arr.resize(3); // co mảng vector arr lại còn 3 phần tử
+	//cout << "\n\n\t\t XUAT MANG\n";
+	//Xuat_Mang_Vector(arr);
+
+	// dãn cái mảng arr ra
+	arr.resize(10); // dãn mảng vector arr ra 10  phần tử
+	cout << "\n\n\t\t XUAT MANG\n";
+	Xuat_Mang_Vector(arr);
+
+	system("pause");
+	return 0;
+}
+
+
+4/ push_back(<Phần tử có kiểu dữ liệu bất kỳ>): Thực hiện đưa phần tử vào cuối vector.
+
+5/ pop_back(): Xóa phần tử cuối cùng trong vector.
+
+8/ capacity(): Trả về kích thước thực sự vector đang lưu trữ (các phần tử).
+
+9/ max_size(): Trả về kích thước tối đa có thể chứa các phần tử của các container.
+
+========================= DEMO CODE ========================= 
+#include<iostream>
+using namespace std;
+#include<vector> // thêm vào thư viện để dùng vector
+
+/* CÚ PHÁP: vector<T> <tên vector>
+T: kiểu dữ liệu của mảng 1 chiều vector mà chúng ta sẽ dùng
+VD:
+vector<int> arr; // khai báo mảng vector chứa các số nguyên
+vector<SinhVien> list; // khai báo mảng vector chứa các sinh viên
+....
+
+*/
+
+// hàm xuất mảng vector
+void Xuat_Mang_Vector(vector<int> arr)
+{
+	for (int i = 0; i < arr.size(); i++)
+	{
+		cout << arr.at(i) << "  "; // <=> arr[i]
+	}
+}
+
+int main()
+{ 
+	vector<int> arr; // khai báo mảng vector chứa các số nguyên
+	for (int i = 1; i <= 10; i++)
+	{
+		arr.push_back(i); // thêm phần tử i vào cuối mảng vector
+	}
+	cout << "\n\n\t\t XUAT MANG\n";
+	Xuat_Mang_Vector(arr);
+	cout << "\nPhan tu dau tien cua mang vector: " << arr.front();
+	cout << "\nPhan tu cuoi cung cua mang vector: " << arr.back();
+	arr.pop_back(); // hàm xóa phần tử cuối cùng trong vector
+	cout << "\n\n\t\t XUAT MANG\n";
+	Xuat_Mang_Vector(arr);
+
+	//cout << "\nKich thuoc thuc su cua mang vector hien tai: " << arr.capacity();
+	//cout << "\nSo luong phan tu co the chua duoc cua vector: " << arr.max_size();
+	system("pause");
+	return 0;
+}
+
+
+
+12/ erase: Xóa phần tử trong vector.
+- Hàm này có 2 dạng:
+	+ Dạng 1: erase(<Tên vector>.begin() + <số nguyên x>): Xóa phần tử tại vị trí x trong mảng (vị trí trong mảng bắt đầu từ 0). 
+
+	+ Dạng 2: erase(<Tên vector>.begin() + <số nguyên x>, <Tên vector>.begin() + <số nguyên y>): Xóa các phần tử của mảng từ vị trí x cho đến vị trí y - 1.
+
+Lưu ý cả 2 trường hợp trên: Nếu vị trí truyền vào không hợp lệ thì chương trình sẽ bị lỗi.
+
+13/ clear(): Xóa tất cả các phần tử hiện có trong vector, vector sau khi thực hiện câu lệnh này sẽ trở thành vector rỗng.
+
+14/ insert: Thêm phần tử vào trong vector.
+- Hàm này có 4 dạng:
+	+ Dạng 1: insert(<Tên vector>.begin() + <số nguyên x>, <giá trị cần chèn>): Chèn giá trị vào vị trí x trong mảng.
+	+ Dạng 2: insert(<Tên vector>.begin() + <số nguyên x>, <số lần chèn y>, <giá trị cần chèn>): Chèn y lần giá trị vào vị trí x trong mảng.
+	+ Dạng 3: insert(<Tên vector>.begin() + <số nguyên x>, <Tên vector a>.begin() + <số nguyên y>, <Tên vector a>.begin() + <số nguyên z>): 
+                    ---> Lấy các phần tử từ vector a bắt đầu lấy từ vị trí y cho đến vị trí z - 1 và chèn vào vị trí x của vector hiện tại. 
+	+ Dạng 4: insert(<Tên vector>.begin() + <số nguyên x>, <Tên mảng a>  + <số nguyên y>, <Tên mảng a>  + <số nguyên z>): 
+                   ----> Lấy các phần tử lấy từ mảng a bắt đầu lấy từ vị trí y đến vị trí z - 1 và chèn vào vị trí x của vector hiện tại.
+
+15/ swap(<vector x>): Hoán đổi các phần tử của vector hiện tại & vector x cho nhau.
+========================= DEMO CODE ========================= 
+
+#include<iostream>
+using namespace std;
+#include<vector> // thêm vào thư viện để dùng vector
+
+/* CÚ PHÁP: vector<T> <tên vector>
+T: kiểu dữ liệu của mảng 1 chiều vector mà chúng ta sẽ dùng
+VD:
+vector<int> arr; // khai báo mảng vector chứa các số nguyên
+vector<SinhVien> list; // khai báo mảng vector chứa các sinh viên
+....
+
+*/
+
+// hàm xuất mảng vector
+void Xuat_Mang_Vector(vector<int> arr)
+{
+	for (int i = 0; i < arr.size(); i++)
+	{
+		cout << arr.at(i) << "  "; // <=> arr[i]
+	}
+}
+
+int main()
+{ 
+	vector<int> arr; // khai báo mảng vector chứa các số nguyên
+	for (int i = 1; i <= 5; i++)
+	{
+		arr.push_back(i); // thêm phần tử i vào cuối mảng vector
+	}
+	cout << "\n\n\t\t XUAT MANG arr\n";
+	Xuat_Mang_Vector(arr);
+	
+	//arr.erase(arr.begin() + 2); // xóa đi 1 phần tử tại vị trí số 2
+	//cout << "\n\n\t\t MANG SAU KHI XOA\n";
+	//Xuat_Mang_Vector(arr);
+
+	//arr.insert(arr.begin() + 2, 69); // thêm 1 phần tử 69 tại vị trí số 2
+	//cout << "\n\n\t\t MANG SAU THEM\n";
+	//Xuat_Mang_Vector(arr);
+	//arr.clear(); // xóa hết tất cả các phần tử hiện có trong mảng vector
+	//cout << "\nSo luong phan tu hien co trong vector: " << arr.size();
+
+	vector<int> x; // khai báo mảng vector x
+	for (int i = 10; i <= 15; i++)
+	{
+		x.push_back(i); // thêm phần tử i vào cuối mảng vector
+	}
+	cout << "\n\n\t\t XUAT MANG x\n";
+	Xuat_Mang_Vector(x);
+
+	arr.swap(x); // hoán đổi 2 cái mảng vector cho nhau
+
+	cout << "\n\n\t\t XUAT MANG arr SAU KHI HOAN DOI\n";
+	Xuat_Mang_Vector(arr);
+	cout << "\n\n\t\t XUAT MANG x SAU KHI HOAN DOI\n";
+	Xuat_Mang_Vector(x);
+	system("pause");
+	return 0;
+}

@@ -1,0 +1,16 @@
+Câu 1: Nhập 3 số thực a, b, c. Tìm số lớn nhất.
+Câu 2: Nhập vào tháng t (với 1<=t<=12). Cho biết tháng t có bao nhiêu
+ngày. Riêng tháng 2 thì phải kiểm tra năm nhuận (Năm nhuận là năm chia
+hết cho 4 mà không chia hết cho 100, hoặc chia hết cho 400).
+Câu 3: Nhập một số n có tối đa 2 chữ số. Hãy cho biết cách đọc ra dạng chữ năm). (vd: n=35 => Ba mươi lăm, n=5 => năm).
+Câu 4: Nhập vào một ngày (ngày, tháng, năm). Tìm ngày kế sau ngày vừa nhập (ngày/tháng/năm).
+
+
+Câu 5: Hệ thập lục phân dùng 16 ký số bao gồm các ký tự 0 .. 9 và A, B, C, D,
+E,F. Các ký số A, B, C, D, E, F có giá trị tương ứng trong hệ thập phân như
+sau:
+A→10, B →11,C→12,D→13, E→14,F→15
+Hãy viết chương trình cho nhập vào ký tự biểu diễn một ký số của hệ thập
+lục phân và cho biết giá trị thập phân tương ứng. Trường hợp ký tự nhập
+vào không thuộc các ký số trên, đưa ra thông báo lỗi: "Hệ thập lục phân
+khôngdùng ký số này"
